@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item ">
+                <a class="nav-link" href="./element.html">Element</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./style.html">Style</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="./bootstrap1.html">bootstarp grid</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  " href="./bootstraptable.html">bootstarp table</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  " href="./javascript.html">Javascript hide show</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  " href="./javascript2.html">Textbox set get </a>
+            </li>
+        </ul>
+    </nav>
+    <div class="jumbotron text-center">
+        <h1>Javascript Tutorial 1 </h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-6 ">
+                <div class="bg-primary" style="height: 100px;" id="div1">
+                    1st div
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-6  ">
+                <div class="bg-success" style="height: 100px;" id="div1">
+                    2nd Div by class
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12  ">
+                <div class="bg-danger" style="height: 100px;" id="div3">
+                    3rd Div
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12  ">
+                <div class="bg-success" style="height: 100px;" id="div4">
+                    4th Div
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-6 ">
+                <button class="btn btn-success" onclick="showdiv1()"> Show 1st</button>
+            </div>
+            <div class="col-md-3 col-sm-6 col-6 ">
+                <button class="btn btn-success" onclick="Hidediv1()"> Hide 1st</button>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12 ">
+                <button class="btn btn-success" onmouseover="showdiv1()">Show on hover</button>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12 ">
+                <button class="btn btn-success" onmouseover="Hidediv1()">Hide on hover</button>
+            </div>
+        </div>
+        <div class="row pt-5">
+            <div class="col-md-3 col-sm-6 col-6 ">
+                <button class="btn btn-success" onclick="showdiv2Byclass()"> Show 1st By Class</button>
+            </div>
+            <div class="col-md-3 col-sm-6 col-6 ">
+                <button class="btn btn-success" onclick="Hidediv2Byclass()"> Hide 1st By Class</button>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12 ">
+                <button class="btn btn-success" onmouseover="showdiv2Byclass()">Show on hover By Class</button>
+            </div>
+            <div class="col-md-3 col-sm-6 col-12 ">
+                <button class="btn btn-success" onmouseover="Hidediv2Byclass()">Hide on hover By Class</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showdiv1() {
+            debugger;
+            document.getElementById('div1').style.display = 'block'
+        }
+        function Hidediv1() {
+            debugger;
+            document.getElementById('div1').style.display = 'none'
+        }
+
+        function showdiv2Byclass() {
+            debugger;
+            var elememtList = document.getElementsByClassName('bg-success');
+
+            for (var i = 0; i < elememtList.length; i++) {
+                elememtList[i].style.display = 'block';
+            }
+        }
+        function Hidediv2Byclass() {
+            debugger;
+            var elememtList = document.getElementsByClassName('bg-success');
+
+            for (var i = 0; i < elememtList.length; i++) {
+                elememtList[i].style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>
