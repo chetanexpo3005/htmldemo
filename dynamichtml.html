@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item ">
+                <a class="nav-link" href="./element.html">Element</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="./style.html">Style</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="./bootstrap1.html">bootstarp grid</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  " href="./bootstraptable.html">bootstarp table</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  " href="./javascript.html">Javascript hide show</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  " href="./javascript2.html">Textbox set get </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link  " href="./jqury1.html">Jqury 1 </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-sm-6 col-6 p-2 ">
+                <input type="text" class="form-control" id="txtName" />
+              
+            </div>
+            <div class="col-md-2 col-sm-6 col-6 p-2 ">
+                <input type="text" class="form-control " id="txtCity" />
+            </div>
+            <div class="col-md-2 col-sm-6 col-6 p-2 ">
+                <input type="text" class="form-control " id="txtMobile" />
+            </div>
+            <div class="col-md-2 col-sm-6 col-12 p-2">
+                <input type="button" id="btnAdd" class="btn btn-success para" value="Add" />
+            </div>
+        </div>
+        <div class="row pt-3">
+            <div class="col-md-6 col-sm-6 col-6 p-2 ">
+                <table id="tblData" class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Sr No</th>
+                            <th>Name</th>
+                            <th>City</th>
+                            <th>Mobile</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        $(document).ready(function () {
+
+            $(".form-control").blur(function() {
+                $(this).css('background-color','gray');
+            });
+            $(".form-control").focusin(function() {
+                $(this).css('background-color','white');
+            });
+            $("#btnAdd").click(function () {
+                debugger;
+                var srNo = $("#tblData tbody").children().length + 1;
+                var name = $("#txtName").val().trim();
+                var city = $("#txtCity").val().trim();
+                var mobile = $("#txtMobile").val().trim();
+                if (name != "" && city != "" && mobile != "") {
+                    var dynamicTr = "<tr><td>"+srNo+"</td><td>" + name + "</td><td>" + city + "</td><td>" + mobile + "</td><td> <button class='btn btn-danger btn-sm' > delete </button> </td></tr>";
+                    $("#tblData tbody").append(dynamicTr);
+                    $("#txtName").val("");
+                    $("#txtCity").val("");
+                    $("#txtMobile").val("");
+                    $(".btn-sm").click(function () {
+                        debugger;
+                        $(this).parent().parent().remove();
+                    });
+                } else {
+                    alert("Please provide values");
+                }
+            }); 
+            
+        });
+    </script>
+
+</body>
+
+</html>
