@@ -1,0 +1,27 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace addition
+{
+    class Program
+    {
+        int number1, number2;
+        int result;
+        static void Main(string[] args)
+        {
+            Program obj = new Program();
+            Console.WriteLine("Enter first number");
+            obj.number1 = Convert.ToInt32(Console.ReadLine()) ;
+            Console.WriteLine("Enter second number");
+            obj.number2 = Convert.ToInt32(Console.ReadLine());
+            obj.result = obj.number1 + obj.number2;
+            Console.WriteLine("Additon is :" + obj.result);
+
+            Console.ReadKey();
+
+        }
+    }
+}

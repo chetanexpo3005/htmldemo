@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace basic1
+{
+    class Program
+    {
+        string Name;
+        char startChaar;
+        Int16 numbe1;
+        Int32 number2;
+        bool isIndian;
+        double ratio;
+        float ratio2;
+        DateTime currentDate;
+
+        static void Main(string[] args)
+        {
+            Program obj = new Program();
+            obj.Name = "Chetan";
+            obj.numbe1 = 1;
+            obj.isIndian = false;
+            obj.ratio = 3.14;
+            obj.ratio2 = 3.12f;
+            obj.currentDate = DateTime.Now;
+            Console.WriteLine("Name is :" + obj.Name);
+            Console.ReadKey();
+        }
+    }
+}
