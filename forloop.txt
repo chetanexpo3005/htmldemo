@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace basic1
+{
+    class forloop
+    { 
+        string[] cityArray = new string[] {"Nagpur","Pune","Mumbai" };
+        string[] stateArray = new string[4];
+        int[] rollNo = new int[] { 1,2,3,4,5,6,7,8,3,4 };
+        static void Main(string[] args)
+        {
+            forloop obj = new forloop();
+            for (int i = 0; i < obj.cityArray.Length; i++)
+            {
+                Console.WriteLine(obj.cityArray[i]);
+            }
+            for (int index = 0; index < obj.stateArray.Length; index++)
+            {
+                Console.WriteLine("Enter State Name");
+                obj.stateArray[index] = Console.ReadLine();
+            }
+            Console.WriteLine("Your state array is as follows:");
+            Console.WriteLine("Array length is "+ obj.stateArray.Length);
+            Console.WriteLine("Max elemenet is :" + obj.rollNo.Max());
+            Console.WriteLine("Min  elemenet is :" + obj.rollNo.Min());
+            Console.WriteLine("Sum  elemenet is :" + obj.rollNo.Sum());
+            Console.WriteLine("Average  elemenet is :" + obj.rollNo.Average());
+            Console.WriteLine("is 5 present :" + obj.rollNo.Contains(5));
+            Console.WriteLine("Distinct :");
+            var distintElement = obj.rollNo.Distinct();
+            for (int index = 0; index < obj.stateArray.Length; index++)
+            {
+                Console.WriteLine(obj.stateArray[index]);
+            }
+            Console.ReadKey();
+        }
+    }
+}
