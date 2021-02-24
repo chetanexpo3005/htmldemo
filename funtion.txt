@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace basic1
+{
+    class functionaddition
+    {
+        int number1, number2, result;
+        public void getdata()
+        {
+            Console.WriteLine("Enter number 1");
+            number1 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter number 2");
+            number2 = Convert.ToInt32(Console.ReadLine());
+        }
+
+        public void displayData()
+        {
+            //result = add();
+            result = addWithParameter(number1, number2);
+            Console.WriteLine("Addition is :" + result);
+        }
+
+        public int addWithParameter(int num1,int num2)
+        {
+            return num1+ num2;
+        }
+
+        public int add()
+        {
+            return number1+ number2;
+        }
+        static void Main(string[] args)
+        {
+            functionaddition obj = new functionaddition();
+            obj.getdata();
+            obj.displayData();
+            Console.ReadKey();
+        }
+    }
+}
